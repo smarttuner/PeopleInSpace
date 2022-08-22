@@ -4,8 +4,10 @@ buildscript {
 
     repositories {
         google()
+        mavenLocal()
         mavenCentral()
         gradlePluginPortal()
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
         maven(uri("https://plugins.gradle.org/m2/")) // For kotlinter-gradle
     }
 
@@ -30,7 +32,9 @@ allprojects {
 
     repositories {
         google()
+        mavenLocal()
         mavenCentral()
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
         maven(url = "https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers")
         maven(url = "https://jitpack.io")
         maven(url = "https://maven.pkg.jetbrains.space/public/p/kotlinx-coroutines/maven")

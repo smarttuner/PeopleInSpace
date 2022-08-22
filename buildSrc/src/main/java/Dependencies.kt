@@ -1,3 +1,11 @@
+const val androidPlugin = "android"
+const val androidApp = "com.android.application"
+const val cocoapods = "native.cocoapods"
+const val androidLib = "com.android.library"
+const val multiplatform = "multiplatform"
+const val mavenPublish = "maven-publish"
+const val composePlugin = "org.jetbrains.compose"
+
 object Versions {
     const val androidMinSdk = 21
     const val androidCompileSdk = 32
@@ -50,6 +58,9 @@ object Versions {
     const val kermit = "1.0.0"
 
     const val gradleVersionsPlugin = "0.39.0"
+
+    const val COMPOSE_MULTIPLATFORM_PLUGIN = "1.2.0-alpha01-dev753"
+    const val KAFFEEVERDE_LIBS = "0.0.9"
 }
 
 object Deps {
@@ -176,5 +187,11 @@ object Deps {
 
     object Horologist {
         const val composeLayout = "com.google.android.horologist:horologist-compose-layout:0.0.17"
+    }
+
+    object KaffeeVerde {
+        const val ApplicationSupport = "net.smarttuner.kaffeeverde:application-support:${Versions.KAFFEEVERDE_LIBS}"
+        const val ComposeHelper = "net.smarttuner.kaffeeverde:compose-helper:${Versions.KAFFEEVERDE_LIBS}"
+        const val LifecycleRuntimeCompose = "net.smarttuner.kaffeeverde:lifecycle-runtime-compose:${Versions.KAFFEEVERDE_LIBS}"
     }
 }

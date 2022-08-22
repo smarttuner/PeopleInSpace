@@ -1,6 +1,7 @@
 pluginManagement {
     repositories {
         gradlePluginPortal()
+        mavenLocal()
         mavenCentral()
         maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     }
@@ -17,9 +18,11 @@ rootProject.name = "PeopleInSpace"
 
 include(":app", ":common", ":compose-desktop")
 include(":compose-ios")
-include(":wearApp")
-include(":wearApp-benchmark")
-include(":web")
-include(":compose-web")
-include(":backend")
-include(":graphql-server")
+include(":compose-kv-shared")
+include(":compose-kv-ios")
+//include(":wearApp")
+//include(":wearApp-benchmark")
+//include(":web")
+//include(":compose-web")
+//include(":backend")
+//include(":graphql-server")
