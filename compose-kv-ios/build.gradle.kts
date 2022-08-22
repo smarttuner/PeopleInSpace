@@ -63,35 +63,13 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 api(project(":compose-kv-shared"))
-                with(Deps.Ktor) {
-                    implementation(clientCore)
-                    implementation(clientJson)
-                    implementation(clientLogging)
-                    implementation(contentNegotiation)
-                    implementation(json)
-                }
-
-                with(Deps.Kotlinx) {
-                    implementation(coroutinesCore)
-                    implementation(serializationCore)
-                }
-
-                with(Deps.SqlDelight) {
-                    implementation(runtime)
-                    implementation(coroutineExtensions)
-                }
-
                 with(Deps.Koin) {
                     api(core)
                     api(test)
                 }
-
                 with(Deps.Log) {
                     api(kermit)
                 }
-
-
-
                 implementation(compose.ui)
                 implementation(compose.foundation)
                 implementation(compose.material)

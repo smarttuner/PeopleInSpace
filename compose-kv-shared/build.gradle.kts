@@ -3,6 +3,9 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 plugins {
     kotlin(multiplatform)
     id(androidLib)
+    id("kotlinx-serialization")
+    id("com.squareup.sqldelight")
+    id("com.rickclephas.kmp.nativecoroutines")
     id(composePlugin) version Versions.COMPOSE_MULTIPLATFORM_PLUGIN
 }
 
@@ -39,14 +42,35 @@ kotlin {
                     implementation(materialIconsExtended)
                 }
                 with(Deps.Koin) {
-                    implementation(core)
+                    api(core)
+                }
+                with(Deps.Ktor) {
+                    implementation(clientCore)
+                    implementation(clientJson)
+                    implementation(clientLogging)
+                    implementation(contentNegotiation)
+                    implementation(json)
+                }
+                with(Deps.SqlDelight) {
+                    implementation(runtime)
+                    implementation(coroutineExtensions)
+                }
+                with(Deps.Kotlinx) {
+                    implementation(coroutinesCore)
+                    implementation(serializationCore)
                 }
             }
 
 
         }
         val commonTest by getting
-        val desktopMain by getting
+        val desktopMain by getting {
+            dependencies {
+                with(Deps.Kotlinx) {
+                    implementation(coroutinesSwing)
+                }
+            }
+        }
 
         val iOSMain by getting {
             dependsOn(commonMain)

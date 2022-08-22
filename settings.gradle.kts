@@ -16,10 +16,11 @@ pluginManagement {
 
 rootProject.name = "PeopleInSpace"
 
-include(":app", ":common", ":compose-desktop")
+include(":app", ":common")
 include(":compose-ios")
 include(":compose-kv-shared")
 include(":compose-kv-ios")
+include(":compose-kv-desktop-jvm")
 //include(":wearApp")
 //include(":wearApp-benchmark")
 //include(":web")
