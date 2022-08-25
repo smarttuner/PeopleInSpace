@@ -32,7 +32,7 @@ kotlin {
                 api(Deps.KaffeeVerde.ApplicationSupport)
                 api(Deps.KaffeeVerde.ComposeHelper)
                 api(Deps.KaffeeVerde.LifecycleRuntimeCompose)
-                implementation(project(":common"))
+                api(project(":common"))
                 with(compose){
                     implementation(runtime)
                     implementation(foundation)
